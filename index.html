@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Expense Tracker| JS Project</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+
+<body class="min-h-screen bg-yellow-200 flex items-center justify-center">
+
+  <div class="bg-gray-100 w-full max-w-md rounded-lg shadow-lg p-6">
+
+    <!-- Heading -->
+    <h2 class="text-xl font-semibold text-gray-800 mb-4">
+      Track your Expenses
+    </h2>
+
+    <!-- Form -->
+    <form class="flex gap-2 mb-5">
+      <input
+        id="desc"
+        type="text"
+        placeholder="Expense Description"
+        required
+        class="flex-1 border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+      />
+
+      <input
+        id="amt"
+        type="number"
+        placeholder="Amount"
+        required
+        class="w-24 border border-gray-300 rounded px-2 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+      />
+
+      <button
+        type="submit"
+        id="submit-btn"
+        class="bg-blue-500 text-white px-4 py-2 rounded text-sm hover:bg-blue-600 transition"
+      >
+        Add
+      </button>
+    </form>
+
+    <!-- Sub heading -->
+    <h3 class="text-sm font-semibold text-gray-600 mb-2">
+      Your Expenses
+    </h3>
+
+    <!-- Table -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm text-left border-collapse">
+        <thead>
+          <tr class="text-gray-600 border-b">
+            <th class="py-2">Description</th>
+            <th class="py-2">Amount</th>
+            <th class="py-2 text-center">Actions</th>
+          </tr>
+        </thead>
+
+        <tbody id="expense-list">
+          <!-- TEMP rows for design only -->
+          <tr class="border-b">
+            <td class="py-2">Food</td>
+            <td class="py-2">₹150</td>
+            <td class="py-2 flex gap-2 justify-center">
+              <button class="bg-blue-500 text-white px-4 py-2 rounded text-sm hover:bg-blue-600 transition">📝</button>
+              <button class="bg-red-500 text-white px-4 py-2 rounded text-sm hover:bg-red-600 transition">✘</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="index.js"></script>
+</body>
+
+<!-- <body class="min-h-screen bg-yellow-200">
+    <div class="main-container bg-gray-100 max-w-xl mx-auto mt-40 w-100 h-80 rounded-md">
+        <h2 id="heading" class="">Track your Expenses</h2>
+        <form class="input-container">
+            <input id="desc" type="text" placeholder="Expense Description" required>
+            <input id="amt" type="number" placeholder="Amount" required>
+            <button type="submit" id="submit-btn" class="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600">Submit</button>
+        </form>
+        <h3 id="expenses">Your Expenses</h3>
+        <div class="output-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="expense-list">
+                    <tr>
+                        <td>text here </td>
+                        <td>amount </td>
+                        <td><button class="edit">Edit</button><button class="remove">Remove</button></td>
+                    </tr>
+
+                    <tr>
+                        <td>text here </td>
+                        <td>amount </td>
+                        <td><button class="edit">Edit</button><button class="remove">Remove</button></td>
+
+                    </tr>
+                    <tr>
+                        <td>text here </td>
+                        <td>amount </td>
+                        <td><button class="edit">Edit</button><button class="remove">Remove</button></td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="index.js"></script>
+</body> -->
+
+</html>

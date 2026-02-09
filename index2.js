@@ -21,14 +21,14 @@ submitBtn.addEventListener("click", function (e) {
   e.preventDefault();
 
   const descValue = descEl.value.trim();
-  descValue = descValue.slice(0, 30);
-  displayText = desc.length > 20 ? desc.slice(0,20) + "..." : desc;
+  // descValue = descValue.slice(0, 30);
+  // displayText = desc.length > 20 ? desc.slice(0, 20) + "..." : desc;
 
 
   const amtValue = Number(amtEl.value);
-if (Number.isNaN(amtValue)) {
-  showError("Amount must be a number");
-}
+  // if (Number.isNaN(amtValue)) {
+  //   showError("Amount must be a number");
+  // }
 
 
   // validation
@@ -37,8 +37,8 @@ if (Number.isNaN(amtValue)) {
       !descValue && amtValue <= 0
         ? "Please enter description and amount"
         : !descValue
-        ? "Please enter expense description"
-        : "Enter amount greater than 0"
+          ? "Please enter expense description"
+          : "Enter amount greater than 0"
     );
     return;
   }
@@ -64,11 +64,11 @@ function renderExpense(expense) {
   const tr = document.createElement("tr");
   tr.dataset.id = expense.id;
   tr.className = "border-b";
-//  <td class="py-2 flex gap-2 justify-center">
+  //  <td class="flex flex-wrap gap-2 justify-center py-2">
   tr.innerHTML = `
     <td class="desc py-2">${expense.description}</td>
     <td class="amt py-2">${expense.amount}</td>
-    <td class="flex flex-wrap gap-2 justify-center py-2">
+   <td class="py-2 flex gap-2 justify-center">
       <button class="edit bg-blue-500 text-white px-3 py-1 rounded text-sm hover:bg-blue-600">📝</button>
       <button class="remove bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600">✘</button>
     </td>
@@ -99,35 +99,35 @@ expenseList.addEventListener("click", function (e) {
   }
 
   if (e.target.classList.contains("edit")) {
-  const row = e.target.closest("tr");
-  const id = Number(row.dataset.id);
+    const row = e.target.closest("tr");
+    const id = Number(row.dataset.id);
 
-  // 1️⃣ Fill inputs
-  const desc = row.querySelector(".desc").textContent;
-  const amt = row.querySelector(".amt").textContent;
+    // 1️⃣ Fill inputs
+    const desc = row.querySelector(".desc").textContent;
+    const amt = row.querySelector(".amt").textContent;
 
-  descEl.value = desc;
-  amtEl.value = amt;
+    descEl.value = desc;
+    amtEl.value = amt;
 
-  // 2️⃣ REMOVE old expense immediately
-  expensesArray = expensesArray.filter(exp => exp.id !== id);
-  localStorage.setItem("expenses", JSON.stringify(expensesArray));
+    // 2️⃣ REMOVE old expense immediately
+    expensesArray = expensesArray.filter(exp => exp.id !== id);
+    localStorage.setItem("expenses", JSON.stringify(expensesArray));
 
-  // 3️⃣ Remove row from UI
-  row.remove();
-}
+    // 3️⃣ Remove row from UI
+    row.remove();
+  }
 
-//   if (e.target.classList.contains("edit")) {
-//   const desc = row.querySelector(".desc").textContent;
-//   const amt = row.querySelector(".amt").textContent;
+  //   if (e.target.classList.contains("edit")) {
+  //   const desc = row.querySelector(".desc").textContent;
+  //   const amt = row.querySelector(".amt").textContent;
 
-//   descEl.value = desc;
-//   amtEl.value = amt;
+  //   descEl.value = desc;
+  //   amtEl.value = amt;
 
-//   editingId = id;
-// }
+  //   editingId = id;
+  // }
 
 });
 
 
-total = expensesArray.reduce((sum, exp) => sum + exp.amount, 0);
+// total = expensesArray.reduce((sum, exp) => sum + exp.amount, 0);

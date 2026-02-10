@@ -21,7 +21,7 @@ expensesArray.forEach(renderExpense);
 submitBtn.addEventListener("click", function (e) {
   e.preventDefault();
 
-  const descValue = descEl.value.trim();
+  let descValue = descEl.value.trim();
   const amtValue = Number(amtEl.value);
   
   console.log(descValue + typeof descValue);
@@ -35,12 +35,12 @@ submitBtn.addEventListener("click", function (e) {
     return;
   }
 
-  descValue = descValue.slice(0, 30);
-  displayText = descValue.length > 30 ? descValue.slice(0, 30) + "..." : descValue;
+  // descValue = descValue.slice(0, 20);
+  // displayText = descValue.length > 20 ? descValue.slice(0, 20) + "..." : descValue;
 
 
-  if (Number.isNaN(amtValue) || amtValue <= 0) {
-    showError("Amount must be a number greater than 0");
+  if (Number.isNaN(amtValue)) {
+    showError("Amount must be a number");
   }
 
   //creating an expense object
@@ -79,7 +79,7 @@ function renderExpense(expense) {
 
   expenseList.appendChild(tr);
 }
-
+ // descValue = descValue.slice(0, 20);
 function showError(message) {
   errorMsg.textContent = message;
   errorMsg.classList.remove("invisible", "opacity-0");

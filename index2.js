@@ -3,9 +3,10 @@ const descEl = document.getElementById("desc");
 const amtEl = document.getElementById("amt");
 const expenseList = document.getElementById("expense-list");
 const formEl = document.getElementById("form");
-let editingId = null;
 
 const errorMsg = document.createElement("p");
+let editingId = null;
+
 errorMsg.className =
   "text-red-500 text-sm mb-2 invisible opacity-0 transition-opacity duration-300 h-5";
 formEl.insertAdjacentElement("afterend", errorMsg);
@@ -21,37 +22,39 @@ submitBtn.addEventListener("click", function (e) {
   e.preventDefault();
 
   const descValue = descEl.value.trim();
-  // descValue = descValue.slice(0, 30);
-  // displayText = desc.length > 20 ? desc.slice(0, 20) + "..." : desc;
-
-
   const amtValue = Number(amtEl.value);
-  // if (Number.isNaN(amtValue)) {
-  //   showError("Amount must be a number");
-  // }
-
-
+  
+  console.log(descValue + typeof descValue);
+  console.log(amtValue + typeof amtValue);
+  
   // validation
   if (!descValue || amtValue <= 0) {
     showError(
-      !descValue && amtValue <= 0
-        ? "Please enter description and amount"
-        : !descValue
-          ? "Please enter expense description"
-          : "Enter amount greater than 0"
+    !descValue && amtValue <= 0 ? "Please enter description and amount"  : !descValue  ? "Please enter expense description" : "Enter amount greater than 0"
     );
     return;
   }
 
+  descValue = descValue.slice(0, 30);
+  displayText = descValue.length > 30 ? descValue.slice(0, 30) + "..." : descValue;
+
+
+  if (Number.isNaN(amtValue) || amtValue <= 0) {
+    showError("Amount must be a number greater than 0");
+  }
+
+  //creating an expense object
   const expObj = {
     id: Date.now(),
     description: descValue,
     amount: amtValue,
   };
 
+  //pushing to array and localStorage
   expensesArray.push(expObj);
   localStorage.setItem("expenses", JSON.stringify(expensesArray));
 
+  //render to ui
   renderExpense(expObj);
 
   // reset inputs

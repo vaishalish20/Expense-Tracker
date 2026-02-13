@@ -1,4 +1,4 @@
-<#### 💰 Expense Tracker
+# 💰 Expense Tracker
 
 A simple browser-based **Expense Tracker** built using **JavaScript, HTML, and Tailwind CSS**.  
 It allows users to add, edit, and delete expenses while automatically calculating the total amount spent.  

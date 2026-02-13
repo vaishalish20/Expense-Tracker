@@ -6,15 +6,11 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="min-h-screen bg-yellow-200 flex items-center justify-center">
-  <!-- <body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-yellow-100 to-yellow-200"> -->
-
-
-  <div class="bg-gray-100 w-full max-w-md rounded-lg shadow-lg p-6">
+<body class="min-h-screen bg-blue-200 flex flex-col items-center justify-center">
+   <div class="bg-gray-100 w-full max-w-md rounded-lg shadow-lg p-6">
 
     <!-- Heading -->
-    <!-- <h2 class="text-xl font-semibold text-gray-800 mb-4"> -->
-    <h2 class="text-xl font-semibold text-gray-800 mb-4 text-center">
+    <h2 class="text-2xl font-semibold text-gray-800 mb-4 text-center">
       Track your Expenses
     </h2>
 
@@ -61,39 +57,14 @@
         </tbody>
       </table>
 
-
-
-      <!-- <div id="output" class="flex gap-12">
-        <button type="submit" id="submit-btn"
-          class="bg-red-400 text-white px-4 py-2 rounded text-sm hover:bg-red-600 transition mt-5">
-          Reset
-        </button>
-        <p id="total" class="text-lg font-semibold mt-4">
-          Total: ₹0
-        </p>
-      </div> -->
     </div>
-    <!-- shadow-md rounded-xl bg-white-->
-    <div id="output" class="flex items-center justify-between mt-6 p-4">
-
-      <!-- Reset Button -->
-      <!-- <button type="button" id="reset-btn" class="bg-red-500 hover:bg-red-600 active:scale-95 
-           text-white px-5 py-2.5 rounded-lg 
-           text-sm font-medium transition duration-200">
-        Reset
-      </button> -->
-
-      <!-- Total Section -->
-      <div>
-        <p class="text-sm text-gray-500">Total Expenditure</p>
-        <p id="total" class="text-2xl font-bold text-red-500">
-          ₹0
-        </p>
-      </div>
-
-
-
-    </div>
+  </div>
+  <!-- Total Expenditure -->
+  <div class="bg-gray-100 w-full max-w-md rounded-lg shadow-lg p-4 mt-6 flex gap-4 justify-evenly items-center">
+      <p class="text-lg text-gray-500 font-semibold text-gray-600">Total Expenditure</p>
+      <p id="total" class="text-2xl font-bold text-blue-500">
+        ₹2000
+      </p>
   </div>
 
   <script src="index2.js"></script>
